@@ -1,1 +1,35 @@
+/* GLOBAL */
+body{
+  margin:0;
+  font-family:Arial;
+  background:#f4f4f4;
+}
 
+/* HEADER */
+.main-header{
+  background:#0f3d4c;
+  display:flex;
+  justify-content:space-between;
+  padding:15px;
+  color:white;
+}
+
+.main-header nav a{
+  color:white;
+  margin:0 10px;
+  text-decoration:none;
+}
+
+/* PRODUCT GRID */
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+  padding:20px;
+}
+
+.card{
+  background:#fff;
+  padding:15px;
+  border-radius:10px;
+}
