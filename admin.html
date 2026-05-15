@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Admin Panel</title>
+</head>
+
+<body>
+
+<h2>Admin Login</h2>
+
+<input id="pass" type="password" placeholder="Password">
+<button onclick="login()">Login</button>
+
+<div id="panel" style="display:none;">
+
+  <h3>Add Product</h3>
+
+  <input id="title" placeholder="Product Name"><br>
+  <input id="price" placeholder="Price"><br>
+  <input id="image" placeholder="Image URL"><br>
+  <input id="link" placeholder="Affiliate Link"><br>
+
+  <button onclick="addProduct()">Add</button>
+
+</div>
+
+<script>
+let products = JSON.parse(localStorage.getItem("products") || "[]");
+
+function login(){
+  if(document.getElementById("pass").value === "1234"){
+    document.getElementById("panel").style.display="block";
+  } else {
+    alert("Wrong Password");
+  }
+}
+
+function addProduct(){
+  let p = {
+    title: title.value,
+    price: price.value,
+    image: image.value,
+    link: link.value
+  };
+
+  products.push(p);
+  localStorage.setItem("products", JSON.stringify(products));
+
+  alert("Product Added!");
+}
+</script>
+
+</body>
+</html>
