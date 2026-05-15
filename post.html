@@ -22,5 +22,32 @@
 loadProducts();
 </script>
 
+/* ২য় স্টেপ*/
+  <div id="productGrid"></div>
+
+<script>
+let products = JSON.parse(localStorage.getItem("products") || "[]");
+
+function loadProducts(){
+  let html = "";
+
+  products.forEach(p=>{
+    html += `
+      <div class="card">
+        <img src="${p.image}">
+        <h3>${p.title}</h3>
+        <p>${p.price}</p>
+        <a href="${p.link}" target="_blank">Buy Now</a>
+      </div>
+    `;
+  });
+
+  document.getElementById("productGrid").innerHTML = html;
+}
+
+loadProducts();
+</script>
+/*২য় স্টেপ শেষ*/
+  
 </body>
 </html>
