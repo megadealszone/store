@@ -29,3 +29,15 @@ function loadProducts(){
 
   document.getElementById("productGrid").innerHTML=html;
 }
+
+
+
+function searchProduct(value){
+  let cards = document.querySelectorAll(".card");
+
+  cards.forEach(c=>{
+    c.style.display =
+      c.innerText.toLowerCase().includes(value.toLowerCase())
+      ? "block" : "none";
+  });
+}
